@@ -14,4 +14,11 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: environment test
+        run: |
+            echo "env1 = $ENV1"
+            echo "env2 = $ENV2"
+        env:
+            ENV1: env1 value
+            ENV2: 1234
       - run: echo "🍏 This job's status is ${{ job.status }}."
