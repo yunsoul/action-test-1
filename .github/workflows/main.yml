@@ -43,6 +43,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: test-log-file
+          path: ./test.log
       - name : artifact sharing test (read)
         shell : bash
-        run: cat test-log-file
+        run: cat ./test.log
