@@ -36,6 +36,7 @@ jobs:
           path: test.log
       - run: echo "🍏 This job's status is ${{ job.status }}."
   Another-Job:
+    needs: Explore-GitHub-Actions
     runs-on: ubuntu-latest
     steps:
       - name: artifact sharing test (download)
