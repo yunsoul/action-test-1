@@ -22,6 +22,8 @@ jobs:
             ENV1: env1 value
             ENV2: 1234
       - name: script test
-        run: ./script.sh
+        run: |
+            chmod 755 ./script.sh
+            ./script.sh
         shell: bash
       - run: echo "🍏 This job's status is ${{ job.status }}."
