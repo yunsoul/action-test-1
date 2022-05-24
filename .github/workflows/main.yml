@@ -44,7 +44,11 @@ jobs:
         with:
           name: test-log-file
           path: download/aaa
-      - name : artifact sharing test (read)
+      - name : artifact sharing test (enumeration)
         shell : bash
         run: ls -R
         working-directory: download/aaa
+      - name : artifact sharing test (read)
+        shell : bash
+        run: cat ./test.log
+
