@@ -26,4 +26,21 @@ jobs:
             chmod 755 ./script.sh
             ./script.sh
         shell: bash
+      - name : artifact sharing test (create)
+        shell : bash
+        run: echo "abcd\nefgh" > test.log
+      - name : artifact sharing test (upload)
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-log-file
+          path: test.log
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  Another-Job:
+    steps:
+      - name: artifact sharing test (download)
+        uses: actions/download-artifact@v3
+        with:
+          name: test-log-file
+      - name : artifact sharing test (read)
+        shell : bash
+        run: cat test-log-file
