@@ -50,5 +50,5 @@ jobs:
         working-directory: download/aaa
       - name : artifact sharing test (read)
         shell : bash
-        run: cat ./test.log
+        run: cat download/aaa/test.log
 
