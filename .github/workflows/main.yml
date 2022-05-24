@@ -20,7 +20,7 @@ jobs:
             echo "env2 = $ENV2"
         env:
             ENV1: env1 value
-            ENV2: 1234
+            ENV2: ${{ 1234 }}
       - name: script test
         run: |
             chmod 755 ./script.sh
