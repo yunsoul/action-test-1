@@ -28,7 +28,7 @@ jobs:
         shell: bash
       - name : artifact sharing test (create)
         shell : bash
-        run: echo "abcd\nefgh" > test.log
+        run: echo -e "abcd\nefgh" > test.log
       - name : artifact sharing test (upload)
         uses: actions/upload-artifact@v3
         with:
